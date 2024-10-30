@@ -30,27 +30,33 @@
   background: #fff;
   padding: 1rem;
   width: 70rem;
+  height: 30rem;
 `,$t=(Me.div`
   display: flex;
   justify-content: space-evenly;
   padding: 1rem;
 `,Me.div`
   display: flex;
+  height: 30rem;
+  justify-content: space-evenly;
   left: 0;
   right: 0;
   top: 3rem;
+  bottom: 3rem;
 `),Bt=Me.div`
-  overflow-y: scroll;
   font-size: 1rem;
   left: 0;
   padding: 0.5rem;
   width: 50vw;
-`,Vt=Me.div`
   overflow-y: scroll;
+  height: 23rem;
+`,Vt=Me.div`
   font-size: 1rem;
   padding: 1rem;
   right: 0;
   width: 50vw;
+  overflow-y: scroll;
+  height: 23rem;
 `,Wt=t=>{const{onCancel:n,text1:r,text2:a}=t,[o,l]=Dt(r.split("\n")),[i,u]=Dt(a.split("\n")),[s,c]=Dt(((e,t)=>{const n=e.split("\n"),r=t.split("\n");let a;a=[];for(let e=0;e+0<n.length&&e+0<r.length;e++)console.log(n[e+0]),console.log(r[e+0]),null==n[e+0]||null==r[e+0]?(console.log(!1),a.push(!0)):(console.log(n[e+0]==r[e+0]),a.push(!(n[e+0]==r[e+0])));for(let e=a.length;e+0<n.length||e+0<r.length;e++)a.push(!0);return a})(r,a));return e.createElement(Ft,null,e.createElement(Ut,null,e.createElement("p",null,"比較結果",e.createElement(It,{onClick:n,cancel:!0},"閉じる")),e.createElement($t,null,e.createElement(Bt,null,e.createElement(jt,{textList:o,wrongList:s})),e.createElement(Vt,null,e.createElement(jt,{textList:i,wrongList:s})))))},{useState:Ht}=t,Qt=Me.header`
   align-content: center;
   display: flex;

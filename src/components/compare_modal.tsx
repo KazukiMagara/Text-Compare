@@ -22,6 +22,7 @@ const Modal = styled.div`
   background: #fff;
   padding: 1rem;
   width: 70rem;
+  height: 30rem;
 `
 
 const Control = styled.div`
@@ -32,25 +33,30 @@ const Control = styled.div`
 
 const CompareArea = styled.div`
   display: flex;
+  height: 30rem;
+  justify-content: space-evenly;
   left: 0;
   right: 0;
   top: 3rem;
+  bottom: 3rem;
 `
 
 const Preview1 = styled.div`
-  overflow-y: scroll;
   font-size: 1rem;
   left: 0;
   padding: 0.5rem;
   width: 50vw;
+  overflow-y: scroll;
+  height: 23rem;
 `
 
 const Preview2 = styled.div`
-  overflow-y: scroll;
   font-size: 1rem;
   padding: 1rem;
   right: 0;
   width: 50vw;
+  overflow-y: scroll;
+  height: 23rem;
 `
 
 interface Props {
