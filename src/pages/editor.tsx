@@ -1,11 +1,17 @@
 ﻿import * as React from 'react'
 import styled from 'styled-components'
+import { Button } from '../components/button'
+import { putCompare } from '../compare/compare'
+import { CompareModal } from '../components/compare_modal'
 
 const { useState } = React
 
 const Header = styled.header`
+  align-content: center;
+  display: flex;
   font-size: 1.5rem;
   height: 2rem;
+  justify-content: space-between;
   left: 0;
   line-height: 2rem;
   padding: 0.5rem 1rem;
@@ -13,6 +19,12 @@ const Header = styled.header`
   right: 0;
   top: 0;
 `
+
+const HeaderControl = styled.div`
+    height: 2rem;
+    display: flex;
+    align-content: center;
+  `
 
 const Wrapper = styled.div`
   bottom: 0;
@@ -50,10 +62,21 @@ export const Editor: React.FC = () => {
     const [text1, setText1] = useState<string>('')
     const [text2, setText2] = useState<string>('')
 
+    const textCompare = (): void => {
+        putCompare(text1, text2)
+    }
+
+    const [showModal, setShowModal] = useState(false)
+
     return (
         <>
             <Header>
                 Text Compare
+                <HeaderControl>
+                    <Button onClick={ () => setShowModal(true) }>
+                        比較する
+                    </Button>
+                </HeaderControl>
             </Header>
             <Wrapper>
                 <TextArea1
@@ -69,6 +92,15 @@ export const Editor: React.FC = () => {
                     value={text2}
                 />
             </Wrapper>
+            {
+                showModal && (
+                    <CompareModal
+                        onCancel={() => setShowModal(false)}
+                        text1={text1}
+                        text2={text2}
+                    />
+                )
+            }
         </>
     )
 }
